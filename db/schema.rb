@@ -57,18 +57,18 @@ ActiveRecord::Schema.define(version: 2020_12_13_100623) do
     t.datetime "date"
     t.integer "animal_id", null: false
     t.integer "veterinarian_id", null: false
+    t.integer "service_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["animal_id"], name: "index_appointments_on_animal_id"
+    t.index ["service_id"], name: "index_appointments_on_service_id"
     t.index ["veterinarian_id"], name: "index_appointments_on_veterinarian_id"
   end
 
   create_table "services", force: :cascade do |t|
     t.string "name"
-    t.integer "veterinarian_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["veterinarian_id"], name: "index_services_on_veterinarian_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -89,6 +89,6 @@ ActiveRecord::Schema.define(version: 2020_12_13_100623) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "animals", "users"
   add_foreign_key "appointments", "animals"
+  add_foreign_key "appointments", "services"
   add_foreign_key "appointments", "veterinarians"
-  add_foreign_key "services", "veterinarians"
 end
