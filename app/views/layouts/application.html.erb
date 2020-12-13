@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HungerfordRails</title>
+    <title>Hungerford Rails</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,14 @@
   </head>
 
   <body>
+    <nav>
+      <%= link_to "Home", root_path %> | 
+      <%= link_to "Log In", login_path %> | 
+      <%= link_to "Sign Up", signup_path %> | 
+      <%= link_to "Log Out", logout_path %>
+    </nav>
+
+
     <%= yield %>
   </body>
 </html>
