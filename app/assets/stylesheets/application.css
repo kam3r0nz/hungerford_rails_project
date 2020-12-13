@@ -21,9 +21,3 @@ nav a {
 label {
     font-weight: bold;
 }
-
-input[type="email"], input[type="password"], input[type="text"] {
-    outline: none;
-    border-radius: 5px;
-    padding: 2px;
-}
