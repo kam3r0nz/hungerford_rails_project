@@ -14,7 +14,7 @@ class AnimalsController < ApplicationController
     end
 
     def create
-        @animal = current_user.animals.new(animal_params)
+        @animal = current_user.animals.build(animal_params)
         if @animal.save
             redirect_to animal_path(@animal)
         end

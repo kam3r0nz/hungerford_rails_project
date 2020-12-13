@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
 
     def destroy
         session.delete :user_id if session[:user_id]
-        redirect_to root_path
+        redirect_to login_path
     end
 
     private

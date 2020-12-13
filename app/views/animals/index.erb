@@ -1,5 +1,5 @@
-<% current_user.animals.each do |animal| %>
+<%= link_to "Add Animal", new_animal_path %>
+
+<% @animals.each do |animal| %>
     <p><%= link_to animal.name, animal_path(animal) %></p>
 <% end %>
-
-<%= link_to "Add Animal", new_animal_path %>

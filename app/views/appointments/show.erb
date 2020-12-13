@@ -1,6 +1,7 @@
-<h3>When: <%= @appointment.date.strftime("%A, %B %e %Y at %l:%M %p") %></h3>
+<h3><%= @appointment.service.name %> for <%= link_to @appointment.animal.name, animal_path(@appointment.animal) %> with <%= @appointment.veterinarian.name %></h3>
 
-<h4>Animal: <%= link_to @appointment.animal.name, animal_path(@appointment.animal) %></h4>
+<h4><%= @appointment.date.strftime("%A, %B %e, %Y at %l:%M %p") %></h4>
 
-<h4>Veterinarian: <%= @appointment.veterinarian.name %></h4>
+<%= link_to "Change", edit_appointment_path(@appointment) %> or <%= link_to "Cancel", @appointment, method: :delete, data: { confirm: "Are you sure you want to cancel this appointment?" } %> Appointment<br><br>
 
+Please give a 24 hour notice when cancelling appointments.
