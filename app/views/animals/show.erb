@@ -1,8 +1,8 @@
 Name: <%= @animal.name %><br>
-Age: <%= @animal.age %><br>
+Age: <%= @animal.birthdate %><br>
 Color: <%= @animal.color %><br>
 Species: <%= @animal.species %><br>
-<img src="<%= @animal.image %>" width="200px" height="200px"><br>
+<img src="<%= (url_for(@animal.image)) %>" width="200px" height="200px"><br>
 
 <%= link_to "Edit Pet", edit_animal_path(@animal) %><br>
 

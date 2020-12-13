@@ -2,17 +2,21 @@
     <%= f.label :name %>
     <%= f.text_field :name %><br>
 
-    <%= f.label :age %>
-    <%= f.number_field :age %><br>
+    <%= f.label :birthdate %>
+    <%= f.date_field :birthdate %><br>
 
     <%= f.label :color %>
     <%= f.text_field :color %><br>
 
+    <%= f.label :weight %>
+    <%= f.number_field :weight %><br>
+
     <%= f.label :species %>
     <%= f.text_field :species %><br>
-
-    <%= f.label :image %>
-    <%= f.url_field :image %><br>
+    <% if f.object.image.blank? %>
+        <%= f.label :image %>
+        <%= f.file_field :image, direct_upload: true, accept: "image/*" %><br>
+    <% end %>
 
     <%= f.submit %>
 <% end %>
