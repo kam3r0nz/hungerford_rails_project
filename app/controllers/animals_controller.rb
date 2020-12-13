@@ -10,15 +10,19 @@ class AnimalsController < ApplicationController
     end
 
     def create
-        @animal = Animal.new(animal_params)
+        @animal = current_user.animals.new(animal_params)
         if @animal.save
             redirect_to animal_path(@animal)
         end
     end
 
+    def show
+        @animal = Animal.find_by(id: params[:id])
+    end
+
     private
 
-    def pet_params
-        params.require(:pet).permit(:name, :age, :color, :species, :image)
+    def animal_params
+        params.require(:animal).permit(:name, :age, :color, :species, :image)
     end
 end

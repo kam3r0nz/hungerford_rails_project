@@ -1,0 +1,18 @@
+<%= form_for @animal do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br>
+
+    <%= f.label :age %>
+    <%= f.number_field :age %><br>
+
+    <%= f.label :color %>
+    <%= f.text_field :color %><br>
+
+    <%= f.label :species %>
+    <%= f.text_field :species %><br>
+
+    <%= f.label :image %>
+    <%= f.url_field :image %><br>
+
+    <%= f.submit %>
+<% end %>
