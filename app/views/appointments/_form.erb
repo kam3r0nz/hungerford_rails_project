@@ -3,10 +3,10 @@
     <%= f.date_field :date %><br>
 
     <%= f.label :animal %>
-    <%= f.collection_select :name, Animal.all, :id, :name %><br>
+    <%= f.collection_select :animal_id, Animal.all, :id, :name %><br>
 
     <%= f.label :veterinarian %>
-    <%= f.collection_select :name, Veterinarian.all, :id, :name %><br>
+    <%= f.collection_select :veterinarian_id, Veterinarian.all, :id, :name %><br>
 
     <%= f.submit %>
 <% end %>
