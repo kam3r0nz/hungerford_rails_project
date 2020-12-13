@@ -2,8 +2,8 @@ class AnimalsController < ApplicationController
     before_action :require_login
     
     def index
-        if session[:user_id]
-            @animals = User.find(session[:user_id]).animals
+        if current_user
+            @animals = current_user.animals
         else
             @animals = Animal.all
         end
@@ -21,15 +21,15 @@ class AnimalsController < ApplicationController
     end
 
     def show
-        @animal = Animal.find_by(id: params[:id])
+        set_animal
     end
 
     def edit
-        @animal = Animal.find_by(id: params[:id])
+        set_animal
     end
 
     def update
-        @animal = Animal.find_by(id: params[:id])
+        set_animal
         if @animal.update(animal_params)
             redirect_to animal_path(@animal)
         else
@@ -37,9 +37,18 @@ class AnimalsController < ApplicationController
         end
     end
 
+    def destroy
+        set_animal.destroy
+        redirect_to user_animals_path(current_user)
+    end
+
     private
 
     def animal_params
         params.require(:animal).permit(:name, :age, :color, :species, :image)
+    end
+
+    def set_animal
+        @animal = Animal.find_by(id: params[:id])
     end
 end
