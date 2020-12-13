@@ -1,3 +1,3 @@
 <h2>Welcome <%= @user.name %>!</h2><br><br>
 
-Number of animals: <%= @user.animals.size %>
+Number of animals: <%= link_to @user.animals.size, user_animals_path(@user) %>
