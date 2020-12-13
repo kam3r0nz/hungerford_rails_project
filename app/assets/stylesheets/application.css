@@ -21,3 +21,7 @@ nav a {
 label {
     font-weight: bold;
 }
+
+.animal_pic {
+    border-radius:100px;
+}

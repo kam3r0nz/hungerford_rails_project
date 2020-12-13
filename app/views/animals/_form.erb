@@ -5,6 +5,11 @@
     <%= f.label :birthdate %>
     <%= f.date_field :birthdate %><br>
 
+    <%= f.label :sex, "Male", value: "Male"  %>
+    <%= f.radio_button :sex, "Male" %>
+    <%= f.label :sex, "Female", value: "Female" %>
+    <%= f.radio_button :sex, "Female" %><br>
+
     <%= f.label :color %>
     <%= f.text_field :color %><br>
 

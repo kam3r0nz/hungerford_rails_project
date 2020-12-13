@@ -1,7 +1,11 @@
 class AppointmentsController < ApplicationController
     before_action :require_login
     def index
-        @appointments = Appointment.all
+        if current_user
+            @appointments = Appointment.where(user_id: current_user.id)
+        else
+            @appointments = Appointment.all
+        end
     end
     
     def new
