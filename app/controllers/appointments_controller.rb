@@ -1,5 +1,6 @@
 class AppointmentsController < ApplicationController
     before_action :require_login
+    
     def index
         if current_user
             @appointments = Appointment.where(user_id: current_user.id)
