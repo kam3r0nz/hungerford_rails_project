@@ -2,7 +2,11 @@ class AnimalsController < ApplicationController
     before_action :require_login
     
     def index
-        @animals = Animal.all
+        if session[:user_id]
+            @animals = User.find(session[:user_id]).animals
+        else
+            @animals = Animal.all
+        end
     end
 
     def new
