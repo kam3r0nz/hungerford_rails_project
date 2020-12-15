@@ -28,7 +28,7 @@ label {
     border-radius:100px;
 }
 
-.add {
+.btn {
     color: #000;
     font-size: 15px;
     font-weight: bold;
@@ -38,7 +38,33 @@ label {
     padding: 5px;
 }
 
-.add:hover {
+.btn:hover {
     color: #fff;
     background-color: #000;
+}
+
+input[type="text"], input[type="number"], input[type="date"], input[type="datetime-local"], input[type="email"], input[type="password"], select {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: bold;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 2px;
+    outline: none;
+}
+
+input[type="file"] {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: bold;
+    padding: 2px;
+    outline: none;
+}
+
+input[type="submit"] {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: bold;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    outline: none;
+    background-color: #fff;
 }
