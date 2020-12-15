@@ -12,6 +12,7 @@ class AppointmentsController < ApplicationController
     
     def new
         @appointment = Appointment.new
+        @appointment.build_animal
     end
 
     def create
@@ -40,7 +41,7 @@ class AppointmentsController < ApplicationController
     end
 
     def appointment_params
-        params.require(:appointment).permit(:date, :animal_id, :veterinarian_id, :service_id)
+        params.require(:appointment).permit(:date, :animal_id, :veterinarian_id, :service_id, :animal_attributes [])
     end
 
     def set_appointment
