@@ -6,8 +6,10 @@ Rails.application.routes.draw do
 
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
-  match '/auth/facebook/callback', to: 'sessions#create_with_fb', via: [:get, :post]
+  match '/auth/google_oauth2/callback', to: 'sessions#create_with_google', via: [:get, :post]
   delete 'logout', to: 'sessions#destroy'
+
+  get 'animals/:id/appointments', to: 'appointments#animal_appointment_index'
 
   resources :users do
     resources :animals

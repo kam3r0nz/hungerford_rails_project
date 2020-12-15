@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
         end
     end
 
-    def create_with_fb
+    def create_with_google
         @user = User.find_or_create_by(email: auth['info']['email']) do |u|
             u.name = auth['info']['name']
             u.password = 'password'
