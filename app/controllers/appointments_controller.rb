@@ -41,7 +41,7 @@ class AppointmentsController < ApplicationController
     end
 
     def appointment_params
-        params.require(:appointment).permit(:date, :animal_id, :veterinarian_id, :service_id, :animal_attributes [])
+        params.require(:appointment).permit(:date, :animal_id, :veterinarian_id, :service_id, animal_attributes: [:name, :birthdate, :sex, :color, :weight, :species, :image])
     end
 
     def set_appointment
