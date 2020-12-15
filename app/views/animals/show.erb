@@ -8,4 +8,6 @@ Species: <%= @animal.species %><br>
 
 <%= link_to "Edit Animal", edit_animal_path(@animal) %><br>
 
-<%= link_to "Delete", @animal, method: :delete, data: { confirm: "Are you sure you want to delete this animal?" } %>
+<%= link_to "Delete", @animal, method: :delete, data: { confirm: "Are you sure you want to delete this animal?" } %><br>
+
+<%= link_to "#{@animal.name}'s Appointments", user_animal_appointments_path(current_user, @animal) %>
