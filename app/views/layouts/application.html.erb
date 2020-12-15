@@ -21,7 +21,7 @@
       <% else %>
         <%= link_to "Profile", user_path(current_user) %> &#8226;
         <%= link_to "Animals", user_animals_path(current_user) %> &#8226;
-        <%= link_to "Appointments", user_animal_appointments_path(current_user, current_user.animals) %> &#8226;
+        <%= link_to "Appointments", appointments_path(current_user) %> &#8226;
         <%= link_to "Log Out", logout_path, method: :delete %>
       <% end %>
     </nav>
