@@ -1,35 +1,9 @@
 <%= form_for @appointment do |f| %>
     <%= f.label :date, "Date and Time:" %>
-    <%= f.datetime_local_field :date %><br><br>
+    <%= f.datetime_local_field :date %><br>
 
-    <%= f.label :animal, "Existing Animal:" %>
-    <%= f.collection_select :animal_id, current_user.animals, :id, :name, include_blank: "" %><br><br>
-
-    <%= f.label :animal, "Add A New Animal" %><br>
-    <%= f.fields_for :animal do |animal| %>
-        <%= animal.label :name, "Name:" %>
-        <%= animal.text_field :name %><br>
-
-        <%= animal.label :birthdate, "Birthdate" %>
-        <%= animal.date_field :birthdate %><br>
-
-        <%= animal.radio_button :sex, "Male" %>
-        <%= animal.label :sex, "Male", value: "Male"  %>
-        <%= animal.radio_button :sex, "Female" %>
-        <%= animal.label :sex, "Female", value: "Female" %><br>
-
-        <%= animal.label :color, "Color:" %>
-        <%= animal.text_field :color %><br>
-
-        <%= animal.label :weight, "Weight(lbs):" %>
-        <%= animal.number_field :weight %><br>
-
-        <%= animal.label :species, "Species:" %>
-        <%= animal.text_field :species %><br>
-
-        <%= animal.label :image, "Image:" %>
-        <%= animal.file_field :image, direct_upload: true, accept: "image/*" %>
-    <% end %><br><br>
+    <%= f.label :animal, "Animal:" %>
+    <%= f.collection_select :animal_id, current_user.animals, :id, :name, include_blank: "" %><br>
 
     <%= f.label :veterinarian, "Veterinarian:" %>
     <%= f.collection_select :veterinarian_id, Veterinarian.all, :id, :name, include_blank: "" %><br>

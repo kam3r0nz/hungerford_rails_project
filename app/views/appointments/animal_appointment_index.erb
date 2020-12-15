@@ -5,6 +5,6 @@
 <% else %>
     <h3><%= @animal.name %>'s Appointments</h3>
     <% @appointments.each do |apt| %>
-        <p><%= link_to "#{apt.date.strftime("%m/%d/%Y")} - #{apt.service.name} with #{apt.veterinarian.name}", appointment_path(apt) %></p>
+        <p><%= link_to "#{apt.date.strftime("%m/%d/%Y")} - #{apt.service.name} with #{apt.veterinarian.name}", animal_appointment_path(@animal, apt) %></p>
     <% end %>
 <% end %>

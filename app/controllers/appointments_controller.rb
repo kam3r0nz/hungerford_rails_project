@@ -33,6 +33,12 @@ class AppointmentsController < ApplicationController
     end
 
     def update
+        set_appointment
+        if @appointment.update(appointment_params)
+            redirect_to appointments_path
+        else
+            render :edit
+        end
     end
 
     def destroy
@@ -41,7 +47,7 @@ class AppointmentsController < ApplicationController
     end
 
     def appointment_params
-        params.require(:appointment).permit(:date, :animal_id, :veterinarian_id, :service_id, animal_attributes: [:name, :birthdate, :sex, :color, :weight, :species, :image])
+        params.require(:appointment).permit(:date, :animal_id, :veterinarian_id, :service_id)
     end
 
     def set_appointment

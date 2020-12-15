@@ -4,6 +4,6 @@
     <p>You currently have no animals.</p>
 <% else %>
     <% @animals.each do |animal| %>
-        <p><%= link_to animal.name, animal_path(animal) %></p>
+        <p><%= link_to animal.name, user_animal_path(current_user, animal) %></p>
     <% end %>
 <% end %>
