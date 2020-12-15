@@ -1,5 +1,9 @@
 <%= link_to "Add Animal", new_animal_path %>
 
-<% @animals.each do |animal| %>
-    <p><%= link_to animal.name, animal_path(animal) %></p>
+<% if @animals.empty? %>
+    <p>You currently have no animals.</p>
+<% else %>
+    <% @animals.each do |animal| %>
+        <p><%= link_to animal.name, animal_path(animal) %></p>
+    <% end %>
 <% end %>
