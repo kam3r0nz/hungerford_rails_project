@@ -1,25 +1,26 @@
 <%= form_for @animal do |f| %>
-    <%= f.label :name %>
+    <%= f.label :name, "Name:" %>
     <%= f.text_field :name %><br>
 
-    <%= f.label :birthdate %>
+    <%= f.label :birthdate, "Birthdate" %>
     <%= f.date_field :birthdate %><br>
 
-    <%= f.label :sex, "Male", value: "Male"  %>
     <%= f.radio_button :sex, "Male" %>
-    <%= f.label :sex, "Female", value: "Female" %>
-    <%= f.radio_button :sex, "Female" %><br>
+    <%= f.label :sex, "Male", value: "Male"  %>
+    <%= f.radio_button :sex, "Female" %>
+    <%= f.label :sex, "Female", value: "Female" %><br>
 
-    <%= f.label :color %>
+    <%= f.label :color, "Color:" %>
     <%= f.text_field :color %><br>
 
-    <%= f.label :weight %>
+    <%= f.label :weight, "Weight(lbs):" %>
     <%= f.number_field :weight %><br>
 
-    <%= f.label :species %>
+    <%= f.label :species, "Species" %>
     <%= f.text_field :species %><br>
+
     <% if f.object.image.blank? %>
-        <%= f.label :image %>
+        <%= f.label :image, "Image:" %>
         <%= f.file_field :image, direct_upload: true, accept: "image/*" %><br>
     <% end %>
 
