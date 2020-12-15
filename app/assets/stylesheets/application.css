@@ -27,3 +27,18 @@ label {
 .animal_pic {
     border-radius:100px;
 }
+
+.add {
+    color: #000;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.add:hover {
+    color: #fff;
+    background-color: #000;
+}
