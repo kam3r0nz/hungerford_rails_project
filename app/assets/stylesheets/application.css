@@ -1,5 +1,5 @@
 body {
-    background-color: #ccc;
+    background-color: #fff;
     font-family: 'JetBrains Mono', monospace;
     text-align: center;
     margin: 0px;
@@ -9,6 +9,8 @@ nav {
     color: white;
     background-color: #000;
     padding: 10px;
+    top: -10px;
+    position: relative;
     margin-bottom: 10px;
 }
 
