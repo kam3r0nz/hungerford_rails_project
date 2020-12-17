@@ -1,9 +1,9 @@
 @user1 = User.create(email: "myemail@email.com", password: "password", name: "Evan Joseph")
 @user2 = User.create(email: "lorina@email.com", password: "bassnectar", name: "Lorin Anderson")
 
-# @animal1 = Animal.create(name: "Alice", birthdate: "06-02-1993", color: "black", weight: 6.72, species: "cat", image: '/app/assets/images/alice.png', user: @user1)
+# @animal1 = Animal.create(name: "Alice", birthdate: "06-02-1993", color: "black", weight: 6.72, species: "cat", image: 'eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--887292619b166e9fbac16d25b3b1b77d999b948d', user: @user1)
 
-# @animal1 = Animal.create(name: "Loki", birthdate: "10-28-2002", color: "black", weight: 56.2, species: "dog", image: '/app/assets/images/alice.png', user: @user2)
+# @animal1 = Animal.create(name: "Loki", birthdate: "10-28-2002", color: "black", weight: 56.2, species: "dog", image: 'eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--887292619b166e9fbac16d25b3b1b77d999b948d', user: @user2)
 
 @service1 = Service.create(name: "Dentistry")
 @service2 = Service.create(name: "Diet and Nutrition")

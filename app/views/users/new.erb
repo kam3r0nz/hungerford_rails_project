@@ -1,12 +1,24 @@
 <%= form_for @user do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %><br>
+    <% if @user.errors.any? %>
+        <div id="error_explanation">
+            <h3>There were some errors:</h3>
+            <% @user.errors.full_messages.each do |message| %>
+                <p><%= message %></p>
+            <% end %>
+        </div>
+    <% end %>
 
-    <%= f.label :email %>
-    <%= f.email_field :email %><br>
+    <div class="field<%= ' field_with_errors' if @user.errors[:name].any? %>">
+    <%= f.label :name, "Name:" %>
+    <%= f.text_field :name %></div><br>
 
-    <%= f.label :password %>
-    <%= f.password_field :password %><br>
+    <div class="field<%= ' field_with_errors' if @user.errors[:name].any? %>">
+    <%= f.label :email, "Email:" %>
+    <%= f.email_field :email %></div><br>
+
+    <div class="field<%= ' field_with_errors' if @user.errors[:name].any? %>">
+    <%= f.label :password, "Password:" %>
+    <%= f.password_field :password %></div><br>
 
     <%= f.submit "Sign Up" %>
 <% end %>
