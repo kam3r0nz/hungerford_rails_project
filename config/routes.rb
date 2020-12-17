@@ -14,6 +14,12 @@ Rails.application.routes.draw do
 
   get 'user/:id/animals/:id/appointments', to: 'appointments#animal_appointment_index', as: 'animal_appointments_index'
 
+  resources :admin
+  resources :animals
+  resources :appointments
+  resources :veterinarians
+  resources :services
+
   resources :users do
     resources :animals
   end
@@ -21,10 +27,4 @@ Rails.application.routes.draw do
   resources :animals do
     resources :appointments
   end
-
-  resources :admin
-  resources :animals
-  resources :appointments
-  resources :veterinarians
-  resources :services
 end

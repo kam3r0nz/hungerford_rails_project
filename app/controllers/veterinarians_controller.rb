@@ -21,12 +21,34 @@ class VeterinariansController < ApplicationController
     end
 
     def show
-        @veterinarian = Veterinarian.find_by(params[:id])
+        set_veterinarian
+    end
+
+    def edit
+        set_veterinarian
+    end
+
+    def update
+        set_veterinarian
+        if @veterinarian.update(veterinarian_params)
+            redirect_to veterinarian_path(@veterinarian)
+        else
+            render :edit
+        end
+    end
+
+    def destroy
+        set_veterinarian.destroy
+        redirect_to veterinarians_path
     end
 
     private
 
     def veterinarian_params
         params.require(:veterinarian).permit(:name)
+    end
+
+    def set_veterinarian
+        @veterinarian = Veterinarian.find_by(params[:id])
     end
 end
