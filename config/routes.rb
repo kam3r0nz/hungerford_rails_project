@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :admins
   root 'sessions#home'
 
   get 'signup', to: 'users#new'
   post 'signup', to: 'users#create'
+
+  get 'admins/signup', to: 'admins#new'
+  post 'admins/signup', to: 'admins#create'
 
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
@@ -20,6 +22,7 @@ Rails.application.routes.draw do
     resources :appointments
   end
 
+  resources :admin
   resources :animals
   resources :appointments
   resources :veterinarians
