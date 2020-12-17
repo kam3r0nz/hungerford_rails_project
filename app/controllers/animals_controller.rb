@@ -2,10 +2,10 @@ class AnimalsController < ApplicationController
     before_action :require_login
     
     def index
-        if current_user
-            @animals = current_user.animals
-        else
+        if current_user.admin?
             @animals = Animal.all
+        elsif current_user
+            @animals = current_user.animals
         end
     end
 

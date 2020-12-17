@@ -1,4 +1,7 @@
 <h2>Welcome <%= @user.name %>!</h2>
+<% if current_user.admin? %>
+    <p>&#8226; Admin &#8226;</p>
+<% end %>
 
 <% if current_user.admin? %>
     <%= link_to "Manage Appointments", appointments_path, class: "btn" %><br><br>

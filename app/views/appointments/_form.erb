@@ -2,8 +2,13 @@
     <%= f.label :date, "Date and Time:" %>
     <%= f.datetime_local_field :date %><br>
 
-    <%= f.label :animal, "Animal:" %>
-    <%= f.collection_select :animal_id, current_user.animals, :id, :name, include_blank: "" %><br>
+    <% if current_user.admin? %>
+        <%= f.label :animal, "Animal:" %>
+        <%= f.collection_select :animal_id, Animal.all, :id, :name, include_blank: "" %>
+    <% else %>
+        <%= f.label :animal, "Animal:" %>
+        <%= f.collection_select :animal_id, current_user.animals, :id, :name, include_blank: "" %>
+    <% end %><br>
 
     <%= f.label :veterinarian, "Veterinarian:" %>
     <%= f.collection_select :veterinarian_id, Veterinarian.all, :id, :name, include_blank: "" %><br>
