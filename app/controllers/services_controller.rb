@@ -29,6 +29,12 @@ class ServicesController < ApplicationController
     end
 
     def update
+        set_service
+        if @service.update(service_params)
+            redirect_to service_path(@service)
+        else
+            render :edit
+        end
     end
 
     def destroy

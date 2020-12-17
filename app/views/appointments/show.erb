@@ -4,4 +4,6 @@
 
 <%= link_to "Change", edit_appointment_path(@appointment) %> or <%= link_to "Cancel", @appointment, method: :delete, data: { confirm: "Are you sure you want to cancel this appointment?" } %> Appointment<br><br>
 
-Please give a 24 hour notice when cancelling appointments.
+<% if !current_user.admin? %>
+    Please give a 24 hour notice when cancelling appointments.
+<% end %>
