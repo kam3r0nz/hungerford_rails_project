@@ -1,11 +1,13 @@
-<%= form_for :user do |f| %>
-    <%= f.label :email %>
-    <%= f.email_field :email %><br>
+<div class="form">
+    <%= form_for :user do |f| %>
+        <%= f.label :email %>
+        <%= f.email_field :email %><br>
 
-    <%= f.label :password %>
-    <%= f.password_field :password %><br>
+        <%= f.label :password %>
+        <%= f.password_field :password %><br>
 
-    <%= f.submit "Log In" %>
-<% end %><br>
+        <%= f.submit "Log In" %>
+    <% end %><br>
 
-<%= link_to('Log in with Google', '/auth/google_oauth2', class: "btn") %>
+    <%= link_to('Log in with Google', '/auth/google_oauth2', class: "btn") %>
+</div>

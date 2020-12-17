@@ -1,38 +1,41 @@
-<%= form_for @animal do |f| %>
-    <% if @animal.errors.any? %>
-        <div id="error_explanation">
-            <h3>There were some errors:</h3>
-            <% @animal.errors.full_messages.each do |message| %>
-                <p><%= message %></p>
-            <% end %>
-        </div>
-    <% end %>
+<div class="form">
+    <%= form_for @animal do |f| %>
+        <% if @animal.errors.any? %>
+            <div id="error_explanation">
+                <h3>There were some errors:</h3>
+                <% @animal.errors.full_messages.each do |message| %>
+                    <p><%= message %></p>
+                <% end %>
+            </div>
+        <% end %>
     
-    <div class="field<%= ' field_with_errors' if @animal.errors[:name].any? %>">
-    <%= f.label :name, "Name:" %>
-    <%= f.text_field :name %></div><br>
+        <div class="field<%= ' field_with_errors' if @animal.errors[:name].any? %>">
+            <%= f.label :name, "Name:" %>
+            <%= f.text_field :name %>
+        </div><br>
 
-    <%= f.label :birthdate, "Birthdate:" %>
-    <%= f.date_field :birthdate %><br>
+        <%= f.label :birthdate, "Birthdate:" %>
+        <%= f.date_field :birthdate %><br>
 
-    <%= f.radio_button :sex, "Male" %>
-    <%= f.label :sex, "Male", value: "Male"  %>
-    <%= f.radio_button :sex, "Female" %>
-    <%= f.label :sex, "Female", value: "Female" %><br>
+        <%= f.radio_button :sex, "Male" %>
+        <%= f.label :sex, "Male", value: "Male"  %>
+        <%= f.radio_button :sex, "Female" %>
+        <%= f.label :sex, "Female", value: "Female" %><br>
 
-    <%= f.label :color, "Color:" %>
-    <%= f.text_field :color %><br>
+        <%= f.label :color, "Color:" %>
+        <%= f.text_field :color %><br>
 
-    <%= f.label :weight, "Weight(lbs):" %>
-    <%= f.number_field :weight %><br>
+        <%= f.label :weight, "Weight(lbs):" %>
+        <%= f.number_field :weight %><br>
 
-    <%= f.label :species, "Species:" %>
-    <%= f.text_field :species %><br>
+        <%= f.label :species, "Species:" %>
+        <%= f.text_field :species %><br>
 
-    <% if f.object.image.blank? %>
-        <%= f.label :image, "Image:" %>
-        <%= f.file_field :image, direct_upload: true, accept: "image/*" %><br>
-    <% end %>
+        <% if f.object.image.blank? %>
+            <%= f.label :image, "Image:" %>
+            <%= f.file_field :image, direct_upload: true, accept: "image/*" %><br>
+        <% end %>
 
     <%= f.submit %>
-<% end %>
+    <% end %>
+</div>

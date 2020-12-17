@@ -1,6 +1,8 @@
-<%= form_for @veterinarian do |f| %>
-<%= f.label :name, "Name:" %>
-<%= f.text_field :name %><br>
+<div class="form">
+    <%= form_for @veterinarian do |f| %>
+        <%= f.label :name, "Name:" %>
+        <%= f.text_field :name %><br>
 
-<%= f.submit %>
-<% end %>
+        <%= f.submit %>
+    <% end %>
+</div>

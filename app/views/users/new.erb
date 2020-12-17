@@ -1,27 +1,32 @@
-<%= form_for @user do |f| %>
-    <% if @user.errors.any? %>
-        <div id="error_explanation">
-            <h3>There were some errors:</h3>
-            <% @user.errors.full_messages.each do |message| %>
-                <p><%= message %></p>
-            <% end %>
+<div class="form">
+    <%= form_for @user do |f| %>
+        <% if @user.errors.any? %>
+            <div id="error_explanation">
+                <h3>There were some errors:</h3>
+                <% @user.errors.full_messages.each do |message| %>
+                    <p><%= message %></p>
+                <% end %>
+            </div>
+        <% end %>
+
+        <div class="field<%= ' field_with_errors' if @user.errors[:name].any? %>">
+            <%= f.label :name, "Name:" %>
+            <%= f.text_field :name %>
         </div>
+
+        <div class="field<%= ' field_with_errors' if @user.errors[:name].any? %>">
+            <%= f.label :email, "Email:" %>
+            <%= f.email_field :email %>
+        </div>
+
+        <div class="field<%= ' field_with_errors' if @user.errors[:name].any? %>">
+            <%= f.label :password, "Password:" %>
+            <%= f.password_field :password %>
+        </div>
+
+        <%= f.check_box :admin, {}, "true", "false" %>
+        <%= f.label :admin, "Admin?" %><br>
+
+        <%= f.submit "Sign Up" %>
     <% end %>
-
-    <div class="field<%= ' field_with_errors' if @user.errors[:name].any? %>">
-    <%= f.label :name, "Name:" %>
-    <%= f.text_field :name %></div><br>
-
-    <div class="field<%= ' field_with_errors' if @user.errors[:name].any? %>">
-    <%= f.label :email, "Email:" %>
-    <%= f.email_field :email %></div><br>
-
-    <div class="field<%= ' field_with_errors' if @user.errors[:name].any? %>">
-    <%= f.label :password, "Password:" %>
-    <%= f.password_field :password %></div><br>
-
-    <%= f.check_box :admin, {}, "true", "false" %>
-    <%= f.label :admin, "Admin?" %><br>
-
-    <%= f.submit "Sign Up" %>
-<% end %>
+</div>
