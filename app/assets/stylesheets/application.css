@@ -65,6 +65,16 @@ input[type="submit"] {
     border: 1px solid black;
     border-radius: 5px;
     padding: 5px;
+    margin-top: 10px;
     outline: none;
     background-color: #fff;
+}
+
+a {
+    color: black;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: none;
 }
