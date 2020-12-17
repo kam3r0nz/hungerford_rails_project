@@ -5,8 +5,8 @@
 
 <% if current_user.admin? %>
     <%= link_to "Manage Appointments", appointments_path, class: "btn" %><br><br>
-    <%= link_to "Add New Veterinarian", new_veterinarian_path, class: "btn" %><br><br>
-    <%= link_to "Add New Service", new_service_path, class: "btn" %>
+    <%= link_to "Manage Veterinarians", veterinarians_path, class: "btn" %><br><br>
+    <%= link_to "Manage Services", services_path, class: "btn" %>
 <% else %>
     <% if @user.animals.size == 0 %>
         <%= link_to "Add Animal", new_animal_path, class: "btn" %>
