@@ -14,12 +14,22 @@ class UsersController < ApplicationController
     end
 
     def show
-        @user = User.find_by(id: params[:id])
+        set_user
+    end
+
+    def destroy
+        set_user.destroy
+        session.delete :user_id
+        redirect_to login_path
     end
 
     private
 
     def user_params
         params.require(:user).permit(:name, :email, :password, :admin)
+    end
+
+    def set_user
+        @user = current_user
     end
 end

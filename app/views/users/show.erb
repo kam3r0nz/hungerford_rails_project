@@ -19,4 +19,6 @@
     <% else %>
         <%= link_to "Appointments: #{@user.appointments.size}", appointments_path %>
     <% end %>
-<% end %>
+<% end %><br><br><br>
+
+<%= link_to "Delete Account", @user, method: :delete, data: { confirm: "Are you sure you want to delete your account?" }, class: "btn" %>
