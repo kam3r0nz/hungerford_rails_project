@@ -11,3 +11,7 @@
 <% else %>
     <%= link_to "Appointments: #{@user.appointments.size}", appointments_path %>
 <% end %>
+
+<% if current_user.admin? %>
+    hi admin
+<% end %>

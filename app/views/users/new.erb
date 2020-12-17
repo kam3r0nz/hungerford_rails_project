@@ -20,5 +20,8 @@
     <%= f.label :password, "Password:" %>
     <%= f.password_field :password %></div><br>
 
+    <%= f.check_box :admin, {}, "true", "false" %>
+    <%= f.label :admin, "Admin?" %><br>
+
     <%= f.submit "Sign Up" %>
 <% end %>
