@@ -38,6 +38,8 @@ class ServicesController < ApplicationController
     end
 
     def destroy
+        set_service.destroy
+        redirect_to services_path
     end
 
     private
