@@ -25,6 +25,7 @@ class ServicesController < ApplicationController
     end
 
     def edit
+        set_service
     end
 
     def update
