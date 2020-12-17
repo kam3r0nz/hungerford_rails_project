@@ -1,4 +1,12 @@
 class VeterinariansController < ApplicationController
+    before_action :require_login
+
+    def index
+        if current_user.admin?
+            @veterinarians = Veterinarian.all
+        end
+    end
+
     def new
         @veterinarian = Veterinarian.new
     end
