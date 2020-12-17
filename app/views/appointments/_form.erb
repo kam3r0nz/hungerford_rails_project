@@ -1,6 +1,16 @@
 <%= form_for @appointment do |f| %>
+    <% if @appointment.errors.any? %>
+        <div id="error_explanation">
+            <h3>There were some errors:</h3>
+            <% @appointment.errors.full_messages.each do |message| %>
+                <p><%= message %></p>
+            <% end %>
+        </div>
+    <% end %>
+
+    <div class="field<%= ' field_with_errors' if @appointment.errors[:date].any? %>">
     <%= f.label :date, "Date and Time:" %>
-    <%= f.datetime_local_field :date %><br>
+    <%= f.datetime_local_field :date %></div><br>
 
     <% if current_user.admin? %>
         <%= f.label :animal, "Animal:" %>
