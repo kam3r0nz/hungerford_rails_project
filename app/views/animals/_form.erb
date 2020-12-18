@@ -12,7 +12,7 @@
         <div class="field<%= ' field_with_errors' if @animal.errors[:name].any? %>">
             <%= f.label :name, "Name:" %>
             <%= f.text_field :name %>
-        </div><br>
+        </div>
 
         <%= f.label :birthdate, "Birthdate:" %>
         <%= f.date_field :birthdate %><br>
