@@ -9,11 +9,12 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Condensed&family=Sacramento&family=JetBrains+Mono:wght@100&display=swap" rel="stylesheet">
   </head>
 
   <body>
     <nav>
+      <h1>iVeterinarian</h1>
       <%= link_to "Home", root_path %> &#8226; 
       <% if !current_user %>
         <%= link_to "Log In", login_path %>  &#8226;
@@ -28,8 +29,10 @@
         <% end %>
         <%= link_to "Log Out", logout_path, method: :delete %>
       <% end %>
+      <hr/>
     </nav>
-
+    
     <%= yield %>
+    
   </body>
 </html>
