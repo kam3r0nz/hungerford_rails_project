@@ -52,6 +52,13 @@ hr {
     border-top: 1px dashed #777;
 }
 
+.small {
+    width: 25%;
+    height: 1px;
+    border-width: 0px;
+    border-top: 1px dashed #777;
+}
+
 label {
     color: #000;
     font-weight: bold;
@@ -79,7 +86,6 @@ input[type="text"], input[type="number"], input[type="date"], input[type="dateti
     font-family: 'JetBrains Mono', monospace;
     font-weight: bold;
     border: 1px solid #777;
-    border-radius: 5px;
     padding: 2px;
     outline: none;
     margin: 5px;
@@ -95,6 +101,7 @@ input[type="file"] {
 
 input[type="submit"] {
     font-family: 'JetBrains Mono', monospace;
+    font-weight: bold;
     border: none;
     padding: 5px;
     margin-top: 10px;
@@ -127,3 +134,11 @@ a:hover {
     display: inline-block;
     padding: 10px;
 } */
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }

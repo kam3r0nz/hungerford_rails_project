@@ -1,6 +1,9 @@
 <h2>Veterinarians</h2>
-<%= link_to "Add Veterinarian", new_veterinarian_path, class: "btn" %>
 
 <% @veterinarians.each do |vet| %>
     <p><%= link_to vet.name, veterinarian_path(vet) %></p>
 <% end %>
+
+<hr class="small"/><br>
+
+<%= link_to "Add Veterinarian", new_veterinarian_path, class: "btn" %>

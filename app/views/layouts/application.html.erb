@@ -15,6 +15,7 @@
   <body>
     <nav>
       <h1>iVeterinarian</h1>
+      <hr/>
       <%= link_to "Home", root_path %> &#8226; 
       <% if !current_user %>
         <%= link_to "Log In", login_path %>  &#8226;
@@ -34,5 +35,6 @@
     
     <%= yield %>
     
+    <footer><small>Copyright &copy; 2020 iVeterinarian, All rights reserved.</small></footer>
   </body>
 </html>

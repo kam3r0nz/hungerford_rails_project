@@ -1,6 +1,9 @@
 <h2>Services</h2>
-<%= link_to "Add Service", new_service_path, class: "btn" %>
 
 <% @services.each do |service| %>
     <p><%= link_to service.name, service_path(service) %></p>
 <% end %>
+
+<hr class="small"/><br>
+
+<%= link_to "Add Service", new_service_path, class: "btn" %>

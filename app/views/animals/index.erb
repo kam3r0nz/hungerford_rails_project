@@ -1,5 +1,4 @@
 <h2>Animals</h2>
-<%= link_to "Add Animal", new_animal_path, class: "btn" %>
 
 <% if @animals.empty? %>
     <p>You currently have no animals.</p>
@@ -8,3 +7,7 @@
         <p><%= link_to animal.name, user_animal_path(current_user, animal) %></p>
     <% end %>
 <% end %>
+
+<hr class="small"/><br>
+
+<%= link_to "Add Animal", new_animal_path, class: "btn" %><br><br>
