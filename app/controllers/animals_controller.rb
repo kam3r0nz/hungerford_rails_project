@@ -4,7 +4,7 @@ class AnimalsController < ApplicationController
     def index
         if current_user.admin?
             @animals = Animal.all
-        elsif current_user
+        else
             @animals = current_user.animals
         end
     end
