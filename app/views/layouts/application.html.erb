@@ -23,7 +23,7 @@
       <% else %>
         <%= link_to "Profile", user_path(current_user) %> &#8226;
         <%= link_to "Animals", user_animals_path(current_user) %> &#8226;
-        <%= link_to "Appointments", appointments_path(current_user.appointments) %> &#8226;
+        <%= link_to "Appointments", user_appointments_path(current_user) %> &#8226;
         <% if current_user.admin? %>
           <%= link_to "Vets", veterinarians_path %> &#8226;
           <%= link_to "Services", services_path %> &#8226;

@@ -120,13 +120,15 @@ input[type="submit"]:hover {
 }
 
 a {
-    color: black;
+    color: #000;
     font-weight: bold;
 }
 
 a:hover {
-    text-decoration: none;
+    color: #2B65EC;
+    transition-duration: 0.4s;
 }
+
 /* 
 .form {
     background-color: #fff;
