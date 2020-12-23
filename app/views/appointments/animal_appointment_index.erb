@@ -1,10 +1,13 @@
-<%= link_to "Schedule Appointment", new_appointment_path, class: "btn" %>
+<h2><%= @animal.name %>'s Appointments</h2>
 
 <% if @appointments.empty? %>
     <p><%= @animal.name %> has no scheduled appointments.</p>
 <% else %>
-    <h3><%= @animal.name %>'s Appointments</h3>
     <% @appointments.each do |apt| %>
-        <p><%= apt.date.strftime("%m/%d/%Y") %> - <%= link_to "#{apt.service.name} with #{apt.veterinarian.name}", animal_appointment_path(@animal, apt) %></p>
+        <p><%= apt.date.strftime("%m/%d/%Y") %> - <%= link_to "#{apt.service.name} with #{apt.veterinarian.name}", user_animal_appointments_path(current_user, @animal, apt) %></p>
     <% end %>
 <% end %>
+
+<hr class="small"/><br>
+
+<%= link_to "Schedule Appointment", new_appointment_path, class: "btn" %>
