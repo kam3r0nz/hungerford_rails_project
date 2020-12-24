@@ -4,7 +4,7 @@
     <p><%= @animal.name %> has no scheduled appointments.</p>
 <% else %>
     <% @appointments.each do |apt| %>
-        <p><%= apt.date.strftime("%m/%d/%Y") %> - <%= link_to "#{apt.service.name} with #{apt.veterinarian.name}", user_animal_appointments_path(current_user, @animal, apt) %></p>
+        <p><%= apt.date.strftime("%m/%d/%Y") %> - <%= link_to "#{apt.service.name} with #{apt.veterinarian.name}", user_animal_appointment_path(current_user, @animal, apt) %></p>
     <% end %>
 <% end %>
 

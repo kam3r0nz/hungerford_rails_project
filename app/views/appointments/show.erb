@@ -2,6 +2,8 @@
 
 <h4><%= @appointment.date.strftime("%A, %B %e, %Y at %l:%M %p") %></h4>
 
+<hr class="small"/><br>
+
 <%= link_to "Change", edit_user_animal_appointment_path(current_user, @appointment.animal, @appointment) %> or <%= link_to "Cancel", @appointment, method: :delete, data: { confirm: "Are you sure you want to cancel this appointment?" } %> Appointment<br><br>
 
 <% if !current_user.admin? %>
