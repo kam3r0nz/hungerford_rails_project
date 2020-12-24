@@ -14,7 +14,7 @@ class VeterinariansController < ApplicationController
     def create
         @veterinarian = Veterinarian.new(veterinarian_params)
         if @veterinarian.save
-            redirect_to veterinarian_path(@veterinarian)
+            redirect_to veterinarians_path
         else
             render :new
         end

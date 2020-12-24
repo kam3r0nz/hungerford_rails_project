@@ -4,7 +4,7 @@
     There are currently no veterinarians in the system.
 <% else %>
     <% @veterinarians.each do |vet| %>
-        <p><%= link_to vet.name, veterinarian_path(vet) %></p>
+        <p><%= vet.name %> - <small><%= link_to "Delete", vet, method: :delete, data: { confirm: "Are you sure you want to delete this veterinarian?" } %></small></p>
     <% end %>
 <% end %>
 
