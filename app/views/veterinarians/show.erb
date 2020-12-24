@@ -1,13 +1,15 @@
 <h3><%= @veterinarian.name %></h3>
 
-<%= link_to "Schedule Appointment", new_appointment_path, class: "btn" %><br><br>
-
 <% if @veterinarian.appointments.empty? %>
     This veterinarian has no scheduled appointments.
 <% else %>
     <% @veterinarian.appointments.each do |appointment| %>
         <%= appointment.date.strftime("%A, %B %e, %Y at %l:%M %p") %>
     <% end %>
-<% end %><br><br>
+<% end %><br>
+
+<hr class="small"/><br>
+
+<%= link_to "Schedule Appointment", new_appointment_path, class: "btn" %><br><br>
 
 <%= link_to "Delete", @veterinarian, method: :delete, data: { confirm: "Are you sure you want to delete this veterinarian?" } %> Veterinarian

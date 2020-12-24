@@ -1,7 +1,11 @@
 <h2>Veterinarians</h2>
 
-<% @veterinarians.each do |vet| %>
-    <p><%= link_to vet.name, veterinarian_path(vet) %></p>
+<% if @veterinarians.empty? %>
+    There are currently no veterinarians in the system.
+<% else %>
+    <% @veterinarians.each do |vet| %>
+        <p><%= link_to vet.name, veterinarian_path(vet) %></p>
+    <% end %>
 <% end %>
 
 <hr class="small"/><br>
