@@ -25,8 +25,4 @@ Rails.application.routes.draw do
       resources :appointments
     end
   end
-
-  resources :users do
-    resources :appointments
-  end
 end

@@ -2,9 +2,7 @@ class ServicesController < ApplicationController
     before_action :require_login
 
     def index
-        if current_user.admin?
-            @services = Service.all
-        end
+        @services = Service.all
     end
 
     def new
@@ -20,25 +18,8 @@ class ServicesController < ApplicationController
         end
     end
 
-    def show
-        set_service
-    end
-
-    def edit
-        set_service
-    end
-
-    def update
-        set_service
-        if @service.update(service_params)
-            redirect_to service_path(@service)
-        else
-            render :edit
-        end
-    end
-
     def destroy
-        set_service.destroy
+        Service.find_by(params[:id]).destroy
         redirect_to services_path
     end
 
@@ -46,9 +27,5 @@ class ServicesController < ApplicationController
 
     def service_params
         params.require(:service).permit(:name)
-    end
-
-    def set_service
-        @service = Service.find_by(params[:id])
     end
 end

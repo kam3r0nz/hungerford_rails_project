@@ -21,7 +21,7 @@ class AppointmentsController < ApplicationController
 
     def create
         set_animal
-        @appointment = @animal.appointment.build(appointment_params)
+        @appointment = @animal.appointments.build(appointment_params)
         if @appointment.save
             redirect_to appointment_path(@appointment)
         else
