@@ -5,12 +5,12 @@ class AppointmentsController < ApplicationController
         if current_user.admin?
             @appointments = Appointment.all
         else
-            @appointments = current_user.appointments
+            @appointments = Appointment.where(animal_id: current_user.animals)
         end
     end
 
     def animal_appointment_index
-        @animal = Animal.find_by(id: params[:id])
+        set_animal
         @appointments = Appointment.where(animal_id: @animal.id)
     end
     
@@ -20,7 +20,8 @@ class AppointmentsController < ApplicationController
     end
 
     def create
-        @appointment = current_user.appointments.build(appointment_params)
+        set_animal
+        @appointment = @animal.appointment.build(appointment_params)
         if @appointment.save
             redirect_to appointment_path(@appointment)
         else
@@ -56,5 +57,9 @@ class AppointmentsController < ApplicationController
 
     def set_appointment
         @appointment = Appointment.find_by(id: params[:id])
+    end
+
+    def set_animal
+        @animal = Animal.find_by(id: params[:id])
     end
 end
