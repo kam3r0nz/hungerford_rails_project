@@ -23,8 +23,12 @@ class AppointmentsController < ApplicationController
     end
     
     def new
-        @appointment = Appointment.new
-        @appointment.build_animal
+        if filter_appointments
+            @appointment = @animal.appointments.build
+        else
+            @appointment = Appointment.new
+            @appointment.build_animal
+        end
     end
 
     def create

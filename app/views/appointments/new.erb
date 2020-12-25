@@ -1,4 +1,8 @@
-<h3>Schedule Appointment</h3>
+<% if @animal %>
+    <h3>Schedule Appointment for <%= @animal.name %></h3>
+<% else %>
+    <h3>Schedule Appointment</h3>
+<% end %>
 <%= form_tag appointments_path do %>
  <%= render 'form' %>
 <% end %>
