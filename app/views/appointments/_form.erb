@@ -10,6 +10,8 @@
         
         <% if @animal %>
             <%= f.hidden_field :animal_id %>
+            <%= f.label :animal, "Animal:" %>
+            <%= f.text_field :animal, value: @animal.name, readonly: true %>
         <% else %>
             <% if current_user.admin? %>
                 <%= f.label :animal, "Animal:" %>
