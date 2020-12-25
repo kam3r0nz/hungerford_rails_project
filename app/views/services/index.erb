@@ -4,7 +4,7 @@
     There are currently no services in the system.
 <% else %>
     <% @services.each do |service| %>
-        <p><%= service.name %> - <small><%= link_to "Delete", service, method: :delete, data: { confirm: "Are you sure you want to delete this service?" } %></small></p>
+        <p><%= service.name %></p>
     <% end %>
 <% end %>
 
