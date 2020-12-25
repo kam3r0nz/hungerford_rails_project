@@ -1,0 +1,6 @@
+<%= form_for @animal do |f| %>
+        <%= f.label :image, "Image:" %>
+        <%= f.file_field :image, direct_upload: true, accept: "image/*" %><br>
+
+        <%= f.submit "Upload Image" %>
+<% end %>

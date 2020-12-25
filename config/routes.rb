@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   match '/auth/google_oauth2/callback', to: 'sessions#create_with_google', via: [:get, :post]
   delete 'logout', to: 'sessions#destroy'
 
+  get 'animals/:id/image/upload', to: 'animals#image_upload', as: 'animal_image_upload'
+
   resources :users, only: [:new, :create, :show]
   resources :animals
   resources :appointments

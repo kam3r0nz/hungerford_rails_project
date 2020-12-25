@@ -25,11 +25,6 @@
         <%= f.label :species, "Species:" %>
         <%= f.text_field :species %><br>
 
-        <% if f.object.image.blank? %>
-            <%= f.label :image, "Image:" %>
-            <%= f.file_field :image, direct_upload: true, accept: "image/*" %><br>
-        <% end %>
-
-    <%= f.submit %>
+        <%= f.submit %>
     <% end %>
 </div>

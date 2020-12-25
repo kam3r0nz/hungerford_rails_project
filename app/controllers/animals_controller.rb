@@ -20,6 +20,16 @@ class AnimalsController < ApplicationController
         end
     end
 
+    def image_upload
+        set_animal
+        @animal.image = params[:image]
+        if @animal.image.save
+            redirect_to user_animal_path(current_user, @animal)
+        else
+            render :image_upload
+        end
+    end
+
     def show
         set_animal
     end
