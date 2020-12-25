@@ -1,3 +1,5 @@
+<h3>Upload Image For <%= @animal.name %></h3>
+
 <%= form_for @animal do |f| %>
         <%= f.label :image, "Image:" %>
         <%= f.file_field :image, direct_upload: true, accept: "image/*" %><br>

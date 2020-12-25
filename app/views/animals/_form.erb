@@ -8,22 +8,32 @@
             <%= f.text_field :name %>
         </div>
 
-        <%= f.label :birthdate, "Birthdate:" %>
-        <%= f.date_field :birthdate %><br>
+        <div class="field<%= ' field_with_errors' if @animal.errors[:birthdate].any? %>">
+            <%= f.label :birthdate, "Birthdate:" %>
+            <%= f.date_field :birthdate %>
+        </div>
 
-        <%= f.radio_button :sex, "Male" %>
-        <%= f.label :sex, "Male", value: "Male"  %>
-        <%= f.radio_button :sex, "Female" %>
-        <%= f.label :sex, "Female", value: "Female" %><br>
+        <div class="field<%= ' field_with_errors' if @animal.errors[:sex].any? %>">
+            <%= f.radio_button :sex, "Male" %>
+            <%= f.label :sex, "Male", value: "Male"  %>
+            <%= f.radio_button :sex, "Female" %>
+            <%= f.label :sex, "Female", value: "Female" %>
+        </div>
 
-        <%= f.label :color, "Color:" %>
-        <%= f.text_field :color %><br>
+        <div class="field<%= ' field_with_errors' if @animal.errors[:color].any? %>">
+            <%= f.label :color, "Color:" %>
+            <%= f.text_field :color %>
+        </div>
 
-        <%= f.label :weight, "Weight(lbs):" %>
-        <%= f.number_field :weight %><br>
+        <div class="field<%= ' field_with_errors' if @animal.errors[:weight].any? %>">
+            <%= f.label :weight, "Weight(lbs):" %>
+            <%= f.number_field :weight %>
+        </div>
 
-        <%= f.label :species, "Species:" %>
-        <%= f.text_field :species %><br>
+        <div class="field<%= ' field_with_errors' if @animal.errors[:species].any? %>">
+            <%= f.label :species, "Species:" %>
+            <%= f.text_field :species %>
+        </div>
 
         <%= f.submit %>
     <% end %>

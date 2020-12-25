@@ -1,9 +1,11 @@
 <% if @animal.image.attached? %>
-    <%=image_tag(@animal.image, size: "200x200", class: "animal_pic") %>
-<% else %>
-    <em>No photo available.</em>
+    <%=image_tag(@animal.image, size: "200x200", class: "animal_pic") %><br><br>
 
-    <%= link_to "Upload Image", animal_image_upload_path(@animal) %>
+    <%= link_to "Change Image", animal_image_upload_path(@animal), class: "btn" %>
+<% else %>
+    <em>No photo available.</em><br><br>
+
+    <%= link_to "Upload Image", animal_image_upload_path(@animal), class: "btn" %>
 <% end %><br>
 <h3>Name: <%= @animal.name %></h3>
 Birthdate: <%= @animal.birthdate.strftime("%m/%d/%Y") %><br>

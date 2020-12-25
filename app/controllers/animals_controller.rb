@@ -16,7 +16,9 @@ class AnimalsController < ApplicationController
     def create
         @animal = current_user.animals.build(animal_params)
         if @animal.save
-            redirect_to animal_path(@animal)
+            redirect_to user_animal_path(current_user, @animal)
+        else
+            render :new
         end
     end
 
