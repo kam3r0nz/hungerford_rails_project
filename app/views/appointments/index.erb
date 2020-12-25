@@ -8,7 +8,11 @@
     <p>You have no scheduled appointments.</p>
 <% else %>
     <% @appointments.each do |apt| %>
-        <p><%= apt.date.strftime("%m/%d/%Y") %> - <%= link_to "#{apt.service.name} for #{apt.animal.name}", user_animal_appointment_path(current_user, apt.animal, apt) %></p>
+        <% if @animal %>
+        <p><%= apt.date.strftime("%m/%d/%Y") %> - <%= link_to "#{apt.service.name}", user_animal_appointment_path(current_user, apt.animal, apt) %></p>
+        <% else %>
+            <p><%= apt.date.strftime("%m/%d/%Y") %> - <%= link_to "#{apt.service.name} for #{apt.animal.name}", user_animal_appointment_path(current_user, apt.animal, apt) %></p>
+        <% end  %>
     <% end %>
 <% end %>
 
