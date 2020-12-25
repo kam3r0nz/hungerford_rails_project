@@ -2,10 +2,18 @@ class AppointmentsController < ApplicationController
     before_action :require_login
     
     def index
-        if params[:animal_id] && @animal = Animal.find_by_id(params[:animal_id])
-            @appointments = @animal.appointments
+        if current_user.admin?
+            if filter_appointments
+                @appointments = @animal.appointments
+            else
+                @appointments = Appointment.all
+            end
         else
-            @appointments = Appointment.all
+            if filter_appointments
+                @appointments = @animal.appointments
+            else
+                @appointments = current_user.appointments
+            end
         end
     end
 
@@ -63,7 +71,7 @@ class AppointmentsController < ApplicationController
         @animal = Animal.find_by(id: params[:id])
     end
 
-    def form_action
-        @form_value = params[:animal]
+    def filter_appointments
+        params[:animal_id] && @animal = Animal.find_by_id(params[:animal_id])
     end
 end
