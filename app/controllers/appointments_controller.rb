@@ -2,10 +2,10 @@ class AppointmentsController < ApplicationController
     before_action :require_login
     
     def index
-        if current_user.admin?
-            @appointments = Appointment.all
+        if params[:animal_id] && @animal = Animal.find_by_id(params[:animal_id])
+            @appointments = @animal.appointments
         else
-            @appointments = Appointment.where(animal_id: current_user.animals)
+            @appointments = Appointment.all
         end
     end
 

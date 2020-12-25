@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   match '/auth/google_oauth2/callback', to: 'sessions#create_with_google', via: [:get, :post]
   delete 'logout', to: 'sessions#destroy'
 
-  get 'users/:id/animals/:id/appointments', to: 'appointments#animal_appointment_index', as: 'user_animal_appointments'
+  # get 'users/:id/animals/:id/appointments', to: 'appointments#animal_appointment_index', as: 'user_animal_appointments'
 
   resources :admin
   resources :animals

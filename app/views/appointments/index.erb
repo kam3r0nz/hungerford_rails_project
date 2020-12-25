@@ -1,4 +1,8 @@
-<h2>Appointments</h2>
+<% if params[:animal_id] && @animal %>
+    <h2><%= @animal.name %>'s Appointments</h2>
+<% else %>
+    <h2>Appointments</h2>
+<% end %>
 
 <% if @appointments.empty? %>
     <p>You have no scheduled appointments.</p>
