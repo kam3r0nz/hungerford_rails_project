@@ -12,7 +12,7 @@
         <div class="field<%= ' field_with_errors' if @veterinarian.errors[:name].any? %>">
             <%= f.label :name, "Name:" %>
             <%= f.text_field :name %>
-        </div><br>
+        </div>
 
         <%= f.submit %>
     <% end %>

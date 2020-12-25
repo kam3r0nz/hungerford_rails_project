@@ -22,7 +22,6 @@ class AppointmentsController < ApplicationController
             @appointment = @animal.appointments.build
         else
             @appointment = Appointment.new
-            @appointment.build_animal
         end
     end
 
