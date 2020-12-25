@@ -4,7 +4,7 @@
 <% end %>
 
 <% if current_user.admin? %>
-    <%= link_to "Manage Appointments", appointments_path, class: "btn" %><br><br>
+    <%= link_to "Manage Appointments", user_appointments_path(current_user), class: "btn" %><br><br>
     <%= link_to "Manage Veterinarians", veterinarians_path, class: "btn" %><br><br>
     <%= link_to "Manage Services", services_path, class: "btn" %>
 <% else %>

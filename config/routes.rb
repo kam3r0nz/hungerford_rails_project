@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   # get 'users/:id/animals/:id/appointments', to: 'appointments#animal_appointment_index', as: 'user_animal_appointments'
 
+  resources :users, only: [:new, :create, :show]
   resources :admin
   resources :animals
   resources :appointments
