@@ -16,11 +16,6 @@ class AppointmentsController < ApplicationController
             end
         end
     end
-
-    def animal_appointment_index
-        set_animal
-        @appointments = Appointment.where(animal_id: @animal.id)
-    end
     
     def new
         if filter_appointments
