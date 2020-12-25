@@ -1,14 +1,8 @@
 <div class="form">
-    <%= form_for @appointment do |f| %>
-        <% if @appointment.errors.any? %>
-            <div id="error_explanation">
-                <h3>There were some errors:</h3>
-                <% @appointment.errors.full_messages.each do |message| %>
-                    <p><%= message %></p>
-                <% end %>
-            </div>
-        <% end %>
+    <%= render partial: "layouts/errors", locals: {object: @appointment} %>
 
+    <%= form_for @appointment do |f| %>
+    
         <div class="field<%= ' field_with_errors' if @appointment.errors[:date].any? %>">
             <%= f.label :date, "Date and Time:" %>
             <%= f.datetime_local_field :date %>

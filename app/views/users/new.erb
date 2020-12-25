@@ -1,13 +1,7 @@
 <div class="form">
+    <%= render partial: "layouts/errors", locals: {object: @user} %>
+
     <%= form_for @user do |f| %>
-        <% if @user.errors.any? %>
-            <div id="error_explanation">
-                <h3>There were some errors:</h3>
-                <% @user.errors.full_messages.each do |message| %>
-                    <p><%= message %></p>
-                <% end %>
-            </div>
-        <% end %>
 
         <div class="field<%= ' field_with_errors' if @user.errors[:name].any? %>">
             <%= f.label :name, "Name:" %>

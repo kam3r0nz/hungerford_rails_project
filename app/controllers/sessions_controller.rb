@@ -1,9 +1,4 @@
 class SessionsController < ApplicationController
-    def home
-    end
-
-    def new
-    end
     
     def create
         user = User.find_by(email: params[:user][:email])
@@ -19,10 +14,15 @@ class SessionsController < ApplicationController
     def create_with_google
         @user = User.find_or_create_by(email: auth['info']['email']) do |u|
             u.name = auth['info']['name']
-            u.password = 'password'
+            u.password = SecureRandom.hex(12)
         end
-        session[:user_id] = @user.id
-        redirect_to user_path(@user)
+        if @user.save
+            session[:user_id] = @user.id
+            redirect_to user_path(@user)
+        else
+            flash[:error] = "There was a problem logging you in with Google."
+            redirect_to login_path
+        end
     end
 
     def destroy

@@ -3,9 +3,9 @@ class AnimalsController < ApplicationController
     
     def index
         if current_user.admin?
-            @animals = Animal.all
+            @animals = Animal.alpha
         else
-            @animals = current_user.animals
+            @animals = current_user.animals.alpha
         end
     end
 
@@ -39,6 +39,7 @@ class AnimalsController < ApplicationController
 
     def destroy
         set_animal.destroy
+        flash[:error] = "Animal has been deleted."
         redirect_to user_animals_path(current_user)
     end
 

@@ -4,15 +4,15 @@ class AppointmentsController < ApplicationController
     def index
         if current_user.admin?
             if filter_appointments
-                @appointments = @animal.appointments
+                @appointments = @animal.appointments.ascending
             else
-                @appointments = Appointment.all
+                @appointments = Appointment.ascending
             end
         else
             if filter_appointments
-                @appointments = @animal.appointments
+                @appointments = @animal.appointments.ascending
             else
-                @appointments = current_user.appointments
+                @appointments = current_user.appointments.ascending
             end
         end
     end
@@ -53,6 +53,7 @@ class AppointmentsController < ApplicationController
 
     def destroy
         set_appointment.destroy
+        flash[:error] = "Appointment has been cancelled."
         redirect_to appointments_path
     end
 
