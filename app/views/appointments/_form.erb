@@ -12,14 +12,18 @@
         <div class="field<%= ' field_with_errors' if @appointment.errors[:date].any? %>">
             <%= f.label :date, "Date and Time:" %>
             <%= f.datetime_local_field :date %>
-        </div><br>
-
-        <% if current_user.admin? %>
-            <%= f.label :animal, "Animal:" %>
-            <%= f.collection_select :animal_id, Animal.all, :id, :name, include_blank: "" %>
+        </div>
+        
+        <% if @animal %>
+            <%= f.hidden_field :animal_id %>
         <% else %>
-            <%= f.label :animal, "Animal:" %>
-            <%= f.collection_select :animal_id, current_user.animals, :id, :name, include_blank: "" %>
+            <% if current_user.admin? %>
+                <%= f.label :animal, "Animal:" %>
+                <%= f.collection_select :animal_id, Animal.all, :id, :name, include_blank: "" %>
+            <% else %>
+                <%= f.label :animal, "Animal:" %>
+                <%= f.collection_select :animal_id, current_user.animals, :id, :name, include_blank: "" %>
+            <% end %>
         <% end %><br>
 
         <%= f.label :veterinarian, "Veterinarian:" %>

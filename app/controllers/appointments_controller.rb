@@ -32,7 +32,6 @@ class AppointmentsController < ApplicationController
     end
 
     def create
-        set_animal
         @appointment = current_user.appointments.build(appointment_params)
         if @appointment.save
             redirect_to appointment_path(@appointment)
@@ -69,10 +68,6 @@ class AppointmentsController < ApplicationController
 
     def set_appointment
         @appointment = Appointment.find_by(id: params[:id])
-    end
-
-    def set_animal
-        @animal = Animal.find_by(id: params[:id])
     end
 
     def filter_appointments
