@@ -18,11 +18,6 @@ class ServicesController < ApplicationController
         end
     end
 
-    def destroy
-        Service.find_by(params[:id]).destroy
-        redirect_to services_path
-    end
-
     private
 
     def service_params

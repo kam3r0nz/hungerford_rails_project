@@ -18,11 +18,6 @@ class VeterinariansController < ApplicationController
         end
     end
 
-    def destroy
-        Veterinarian.find_by(params[:id]).destroy
-        redirect_to veterinarians_path
-    end
-
     private
 
     def veterinarian_params
