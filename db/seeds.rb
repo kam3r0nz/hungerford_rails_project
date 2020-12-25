@@ -1,10 +1,6 @@
 @user1 = User.create(email: "myemail@email.com", password: "password", name: "Evan Joseph")
 @user2 = User.create(email: "lorina@email.com", password: "bassnectar", name: "Lorin Anderson")
 
-# @animal1 = Animal.create(name: "Alice", birthdate: "06-02-1993", color: "black", weight: 6.72, species: "cat", image: 'eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--887292619b166e9fbac16d25b3b1b77d999b948d', user: @user1)
-
-# @animal1 = Animal.create(name: "Loki", birthdate: "10-28-2002", color: "black", weight: 56.2, species: "dog", image: 'eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--887292619b166e9fbac16d25b3b1b77d999b948d', user: @user2)
-
 @service1 = Service.create(name: "Dentistry")
 @service2 = Service.create(name: "Diet and Nutrition")
 @service3 = Service.create(name: "Parasite Control")
@@ -15,9 +11,5 @@
 @service8 = Service.create(name: "Laser Therapy")
 @service9 = Service.create(name: "Cremation")
 @service10 = Service.create(name: "Euthanasia")
-
-@veterinarian1 = Veterinarian.create(name: "Dr. Seuss")
-@veterinarian1 = Veterinarian.create(name: "Dr. Hungerford")
-@veterinarian1 = Veterinarian.create(name: "Dr. Whaley")
 
 
