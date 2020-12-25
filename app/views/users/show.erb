@@ -8,8 +8,8 @@
     <%= link_to "Manage Veterinarians", veterinarians_path, class: "btn" %><br><br>
     <%= link_to "Manage Services", services_path, class: "btn" %>
 <% else %>
-    <% if @user.animals.size == 0 %>
-        <%= link_to "Add Animal", new_animal_path, class: "btn" %>
+    <% if @user.animals.empty? %>
+        <%= link_to "Add Animal", new_user_animal_path(current_user), class: "btn" %>
     <% else %>
         <%= link_to "Animals: #{@user.animals.size}", user_animals_path(@user) %>
     <% end %>

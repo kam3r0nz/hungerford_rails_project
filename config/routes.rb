@@ -27,6 +27,10 @@ Rails.application.routes.draw do
   end
 
   resources :users do
+    resources :animals
+  end
+
+  resources :users do
     resources :appointments
   end
 end
