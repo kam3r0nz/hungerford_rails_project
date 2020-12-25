@@ -62,4 +62,8 @@ class AppointmentsController < ApplicationController
     def set_animal
         @animal = Animal.find_by(id: params[:id])
     end
+
+    def form_action
+        @form_value = params[:animal]
+    end
 end

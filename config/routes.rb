@@ -17,8 +17,8 @@ Rails.application.routes.draw do
   resources :admin
   resources :animals
   resources :appointments
-  resources :veterinarians
-  resources :services
+  resources :veterinarians, only: [:new, :create, :index]
+  resources :services, only: [:new, :create, :index]
 
   resources :users do
     resources :animals do
