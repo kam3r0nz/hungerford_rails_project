@@ -1,4 +1,4 @@
-<%= link_to "Sort In Descending Order", user_appointments_descending_path(current_user)%>
+<%= link_to "Sort In Ascending Order", user_appointments_path(current_user)%>
 
 <% if params[:animal_id] && @animal %>
     <h2><%= @animal.name %>'s Appointments</h2>

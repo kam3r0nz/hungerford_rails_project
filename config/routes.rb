@@ -13,12 +13,13 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
 
   get 'animals/:id/image/upload', to: 'animals#image_upload', as: 'animal_image_upload'
-
   get 'veterinarians/new', to: 'veterinarians#new'
   post 'veterinarians/new', to: 'veterinarians#create'
 
   get 'services/new', to: 'services#new'
   post 'services/new', to: 'services#create'
+
+  get 'users/:id/appointments/descending', to: 'appointments#descending', as: 'user_appointments_descending'
 
   resources :users, only: [:new, :create, :show]
   resources :animals

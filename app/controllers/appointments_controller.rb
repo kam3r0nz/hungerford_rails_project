@@ -16,6 +16,22 @@ class AppointmentsController < ApplicationController
             end
         end
     end
+
+    def descending
+        if current_user.admin?
+            if filter_appointments
+                @appointments = @animal.appointments.descending
+            else
+                @appointments = Appointment.descending
+            end
+        else
+            if filter_appointments
+                @appointments = @animal.appointments.descending
+            else
+                @appointments = current_user.appointments.descending
+            end
+        end
+    end
     
     def new
         if filter_appointments

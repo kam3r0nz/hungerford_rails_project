@@ -7,4 +7,5 @@ class Appointment < ApplicationRecord
   belongs_to :service
 
   scope :ascending, -> { order(date: :asc) }
+  scope :descending, -> { order(date: :desc) }
 end
