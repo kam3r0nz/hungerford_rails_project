@@ -21,5 +21,5 @@
 <% if params[:animal_id] && @animal %>
     <%= link_to "Schedule Appointment", new_user_animal_appointment_path(current_user, @animal), class: "btn" %>
 <% else %>
-    <%= link_to "Schedule Appointment", new_appointment_path, class: "btn" %>
+    <%= link_to "Schedule Appointment", new_user_appointment_path(current_user), class: "btn" %>
 <% end %>

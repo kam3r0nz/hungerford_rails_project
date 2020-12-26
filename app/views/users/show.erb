@@ -14,7 +14,7 @@
         <%= link_to "Animals: #{@user.animals.size}", user_animals_path(@user) %>
     <% end %>
     <br><br>
-    <%= link_to "Schedule Appointment", new_appointment_path, class: "btn" %>
+    <%= link_to "Schedule Appointment", new_user_appointment_path(current_user), class: "btn" %>
 <% end %><br><br>
 
 <hr class="small"/><br>
