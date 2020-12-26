@@ -14,6 +14,7 @@ class ServicesController < ApplicationController
         if @service.save
             redirect_to services_path
         else
+            flash.now[:message] = "There was a problem creating the service. Please try again."
             render :new
         end
     end
