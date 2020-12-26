@@ -3,6 +3,8 @@ body {
     font-family:  'JetBrains Mono', monospace;
     text-align: center;
     margin: 0px auto;
+    padding-right: 100px;
+    padding-left: 100px;
 }
 
 nav {
@@ -29,6 +31,10 @@ nav a:hover {
     text-decoration: none;
     padding: 5px;
     transition-duration: 0.4s;
+}
+
+p.homepage {
+    text-align: left;
 }
 
 h1 {
