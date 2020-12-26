@@ -1,0 +1,25 @@
+<% if params[:animal_id] && @animal %>
+    <h2><%= @animal.name %>'s Appointments</h2>
+<% else %>
+    <h2>Appointments</h2>
+<% end %>
+
+<% if @appointments.empty? %>
+    <p>You have no scheduled appointments.</p>
+<% else %>
+    <% @appointments.each do |apt| %>
+        <% if @animal %>
+        <p><%= apt.date.strftime("%m/%d/%Y") %> - <%= link_to "#{apt.service.name}", user_animal_appointment_path(current_user, apt.animal, apt) %></p>
+        <% else %>
+            <p><%= apt.date.strftime("%m/%d/%Y") %> - <%= link_to "#{apt.service.name} for #{apt.animal.name}", user_animal_appointment_path(current_user, apt.animal, apt) %></p>
+        <% end  %>
+    <% end %>
+<% end %>
+
+<hr class="small"/><br>
+
+<% if params[:animal_id] && @animal %>
+    <%= link_to "Schedule Appointment", new_user_animal_appointment_path(current_user, @animal), class: "btn" %>
+<% else %>
+    <%= link_to "Schedule Appointment", new_appointment_path, class: "btn" %>
+<% end %>
