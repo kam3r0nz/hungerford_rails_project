@@ -1,24 +1,30 @@
-# README
+# iVeterinarian App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an application where you can manage your animal's health and schedule appointments with your veterinarian.
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+To use this app, just clone this [repo](https://github.com/kam3r0nz/hungerford_rails_project).
 
-* System dependencies
+And then execute:
 
-* Configuration
+$ `bundle install`
 
-* Database creation
+## Usage
 
-* Database initialization
+After cloning the repository and running bundle: <br>
+Step 1) Run: `rake db:migrate` <br>
+Step 2) Run: `rake db:seed` <br>
+Step 3) Run: `rails s`
 
-* How to run the test suite
+## Contributing
 
-* Services (job queues, cache servers, search engines, etc.)
+Bug reports and pull requests are welcome on GitHub at https://github.com/kam3r0nz/hungerford_rails_project. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
-* Deployment instructions
+## License
 
-* ...
+The app is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
+## Code of Conduct
+
+Everyone interacting in the BPTracker project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/bptraker/blob/master/CODE_OF_CONDUCT.md).
