@@ -14,6 +14,12 @@ Rails.application.routes.draw do
 
   get 'animals/:id/image/upload', to: 'animals#image_upload', as: 'animal_image_upload'
 
+  get 'veterinarians/new', to: 'veterinarians#new'
+  post 'veterinarians/new', to: 'veterinarians#create'
+
+  get 'services/new', to: 'services#new'
+  post 'services/new', to: 'services#create'
+
   resources :users, only: [:new, :create, :show]
   resources :animals
   resources :appointments

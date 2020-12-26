@@ -2,7 +2,7 @@
 <div class="form">
     <%= render partial: "layouts/errors", locals: {object: @veterinarian} %>
 
-    <%= form_for @veterinarian do |f| %>
+    <%= form_for @veterinarian, url: 'new', multipart: true do |f| %>
 
         <div class="field<%= ' field_with_errors' if @veterinarian.errors[:name].any? %>">
             <%= f.label :name, "Name:" %>
