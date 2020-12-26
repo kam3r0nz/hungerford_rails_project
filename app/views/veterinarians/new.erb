@@ -1,4 +1,14 @@
 <h3>Add Veterinarian</h3>
-<%= form_tag veterinarians_path do %>
- <%= render 'form' %>
-<% end %>
+<div class="form">
+    <%= render partial: "layouts/errors", locals: {object: @veterinarian} %>
+
+    <%= form_for @veterinarian do |f| %>
+
+        <div class="field<%= ' field_with_errors' if @veterinarian.errors[:name].any? %>">
+            <%= f.label :name, "Name:" %>
+            <%= f.text_field :name %>
+        </div>
+
+        <%= f.submit %>
+    <% end %>
+</div>

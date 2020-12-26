@@ -1,4 +1,14 @@
 <h3>Add Service</h3>
-<%= form_tag services_path do %>
- <%= render 'form' %>
-<% end %>
+<div class="form">
+    <%= render partial: "layouts/errors", locals: {object: @service} %>
+
+    <%= form_for @service do |f| %>
+    
+        <div class="field<%= ' field_with_errors' if @service.errors[:name].any? %>">
+            <%= f.label :name, "Service:" %>
+            <%= f.text_field :name %>
+        </div>
+
+        <%= f.submit %>
+    <% end %>
+</div>

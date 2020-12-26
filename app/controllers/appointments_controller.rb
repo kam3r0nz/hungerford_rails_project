@@ -28,7 +28,7 @@ class AppointmentsController < ApplicationController
     def create
         @appointment = current_user.appointments.build(appointment_params)
         if @appointment.save
-            redirect_to appointment_path(@appointment)
+            redirect_to_show_page
         else
             render :new
         end
@@ -45,7 +45,7 @@ class AppointmentsController < ApplicationController
     def update
         set_appointment
         if @appointment.update(appointment_params)
-            redirect_to appointment_path(@appointment)
+            redirect_to_show_page 
         else
             render :edit
         end
@@ -67,5 +67,9 @@ class AppointmentsController < ApplicationController
 
     def filter_appointments
         params[:animal_id] && @animal = Animal.find_by_id(params[:animal_id])
+    end
+
+    def redirect_to_show_page
+        redirect_to appointment_path(@appointment)
     end
 end
