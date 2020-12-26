@@ -51,7 +51,7 @@ class AnimalsController < ApplicationController
 
     def destroy
         set_animal.destroy
-        flash[:error] = "Animal has been deleted."
+        flash[:message] = "Animal has been deleted."
         redirect_to user_animals_path(current_user)
     end
 

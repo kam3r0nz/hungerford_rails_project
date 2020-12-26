@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
             session[:user_id] = user.id
             redirect_to user_path(user)
         else
-            flash.now[:error] = "Account information is incorrect. Please try again."
+            flash.now[:message] = "Account information is incorrect. Please try again."
             render :new
         end
     end
@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
             session[:user_id] = @user.id
             redirect_to user_path(@user)
         else
-            flash[:error] = "There was a problem logging you in with Google."
+            flash[:message] = "There was a problem logging you in with Google."
             redirect_to login_path
         end
     end

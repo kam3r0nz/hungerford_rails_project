@@ -53,7 +53,7 @@ class AppointmentsController < ApplicationController
 
     def destroy
         set_appointment.destroy
-        flash[:error] = "Appointment has been cancelled."
+        flash[:message] = "Appointment has been cancelled."
         redirect_to appointments_path
     end
 
