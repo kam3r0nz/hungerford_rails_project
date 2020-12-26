@@ -16,7 +16,7 @@ class AnimalsController < ApplicationController
     def create
         @animal = current_user.animals.build(animal_params)
         if @animal.save
-            redirect_to user_animal_path(current_user, @animal)
+            redirect_to_show_page
         else
             render :new
         end
@@ -26,7 +26,7 @@ class AnimalsController < ApplicationController
         set_animal
         @animal.image = params[:image]
         if @animal.image.save
-            redirect_to user_animal_path(current_user, @animal)
+            redirect_to_show_page
         else
             render :image_upload
         end
@@ -43,7 +43,7 @@ class AnimalsController < ApplicationController
     def update
         set_animal
         if @animal.update(animal_params)
-            redirect_to animal_path(@animal)
+            redirect_to_show_page
         else
             render :edit
         end
@@ -63,5 +63,9 @@ class AnimalsController < ApplicationController
 
     def set_animal
         @animal = Animal.find_by(id: params[:id])
+    end
+
+    def redirect_to_show_page
+        redirect_to user_animal_path(current_user, @animal)
     end
 end
