@@ -30,6 +30,7 @@ class AppointmentsController < ApplicationController
         if @appointment.save
             redirect_to_show_page
         else
+            flash.now[:message] = "There was an error scheduling your appointment. Please try again."
             render :new
         end
     end
