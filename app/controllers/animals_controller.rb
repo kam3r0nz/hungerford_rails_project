@@ -28,7 +28,6 @@ class AnimalsController < ApplicationController
         if @animal.image.save
             redirect_to_show_page
         else
-            flash.now[:message] = "There was a problem uploading the image."
             render :image_upload
         end
     end
