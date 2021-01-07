@@ -1,11 +1,24 @@
 <h2>Animals</h2>
 
+<%= form_tag(animals_path, method: :get) do %>
+    <%= text_field :search, params[:search] %>
+    <%= submit_tag ("Search") %>
+<% end %>
+
 <% if @animals.empty? %>
-    <p>You currently have no animals.</p>
+    <% if params[:search] %>
+        <p>There were no animals found with that name.</p>
+    <% else %>
+        <p>You currently have no animals.</p>
+    <% end %>
 <% else %>
     <% @animals.each do |animal| %>
         <p><%= link_to animal.name, user_animal_path(current_user, animal) %></p>
     <% end %>
+<% end %>
+
+<% if params[:search] %>
+    <%= link_to "Go Back", user_animals_path(current_user), class: "btn" %><br><br>
 <% end %>
 
 <hr class="small"/><br>

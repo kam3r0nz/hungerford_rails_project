@@ -7,6 +7,10 @@ class AnimalsController < ApplicationController
         else
             @animals = current_user.animals.alpha
         end
+        
+        if params[:search]
+            @animals = @animals.search(params[:search].map(&:downcase))
+        end
     end
 
     def new
@@ -58,7 +62,7 @@ class AnimalsController < ApplicationController
     private
 
     def animal_params
-        params.require(:animal).permit(:name, :birthdate, :sex, :color, :weight, :species, :image)
+        params.require(:animal).permit(:name, :birthdate, :sex, :color, :weight, :species, :image, :search)
     end
 
     def set_animal

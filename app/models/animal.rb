@@ -6,4 +6,9 @@ class Animal < ApplicationRecord
   has_one_attached :image
 
   scope :alpha, -> { order(:name) }
+  
+  def self.search(params)
+    where("LOWER(name) = ?", params)
+  end
+
 end
