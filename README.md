@@ -17,6 +17,9 @@ Step 1) Run: `rake db:migrate` <br>
 Step 2) Run: `rake db:seed` <br>
 Step 3) Run: `rails s`
 
+## Demo
+https://youtu.be/9cZPbpzO15k
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/kam3r0nz/hungerford_rails_project. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
