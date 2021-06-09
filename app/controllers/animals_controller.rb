@@ -8,7 +8,7 @@ class AnimalsController < ApplicationController
             @animals = current_user.animals.alpha
         end
         
-        if params[:search]
+        if params[:search] && !params[:search].empty?
             @animals = @animals.search(params[:search].map(&:downcase))
         end
     end
